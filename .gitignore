@@ -1,0 +1,6 @@
+#.gitignore
+
+.env
+target.json
+node_modules
+*.db
