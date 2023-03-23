@@ -1,3 +1,5 @@
+//2023-03-21 21:08 どうにもならんので"twitter-api-sdk"と"twitter-api-v2"からは一旦離れる
+
 require(`dotenv`).config()
 const env = process.env ; //環境変数として.envを読み込む
 const json = require("./target.json");
