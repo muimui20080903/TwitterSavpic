@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
+    "needle": "^3.2.0",
+    "sqlite3": "^5.1.6",
     "twitter-api-sdk": "^1.2.1",
     "twitter-api-v2": "^1.14.2"
   }
