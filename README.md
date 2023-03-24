@@ -2,27 +2,39 @@
 Twitterのいいね欄から画像を保存する
 
 # セッティング
+```
+$ npm install
+```
 `target.json`に
 ```
-[
-    {
-        "screen_name":"mui",
-        "id":"9999999999"
-    },
-    {
-        "screen_name":"aiueo",
-        "id":""
-    },
-    {
-        "screen_name":"",
-        "id":"11111111"
-    }
-]
+{
+    "dbtable": "<テーブル名>",
+    "FILE_PATH_ROOT": "/home/user/Pictures/",
+    "target": [
+        {
+            "screen_name": "<ユーザー名>",
+        },
+        {
+            "screen_name": "unchi",
+        }
+    ]
+}
 ```
 `.env`に
 ```
 Bearer_Token="AAAAAAAAAAAAAAAAAA"
 ```
+sqlite3でdbの作成
+```
+$ sqlite3 twitterpic.db
+sqlite> CREATE TABLE twitterpic(id PRIMARY KEY ,author_screenname, author_name , author_ID , tweet_ID , media_url, position , file_name);
+```
+開始
+```
+$ npm run start
+```
+
+EAI_AGAINのエラーが出たら、DNSの問題なので、DNSサーバーを変更する
 # 制作
 ## 流れ
 1. TwitterのAPIを利用する
@@ -33,9 +45,8 @@ Bearer_Token="AAAAAAAAAAAAAAAAAA"
 6. 完成！
 
 ## データベースの中身
-|id| author_name | author_ID | tweet_ID | media_url | position | file_name |
-|-|-|-|-|-|-|-|
-|primary key|||||||
-|id(自動で入力される)|ユーザー名|ユーザーid|ツイートID|画像のurl|何枚目か|ファイル名||
+|id|author_screenname| author_name | author_ID | tweet_ID | media_url | position | file_name |
+|-|-|-|-|-|-|-|-|
+|id(primary key)|ユーザーの表示名|ユーザー名(@)|ユーザーid|ツイートID|画像のurl|何枚目か|ファイル名||
 
 sqlの操作は変数を使って行うのがいいらしい
