@@ -1,6 +1,9 @@
 # TwitterSavpic
 Twitterのいいね欄から画像を保存する
 
+node v18.15.0  
+npm 9.5.0
+
 # セッティング
 ```
 $ npm install
@@ -9,13 +12,13 @@ $ npm install
 ```
 {
     "dbtable": "<テーブル名>",
-    "FILE_PATH_ROOT": "/home/user/Pictures/",
+    "FILE_PATH_ROOT": "/home/user/Pictures/<ディレクトリ名>",
     "target": [
         {
             "screen_name": "<ユーザー名>",
         },
         {
-            "screen_name": "unchi",
+            "screen_name": "@realDonaldTrump",
         }
     ]
 }
@@ -35,16 +38,9 @@ $ npm run start
 ```
 
 EAI_AGAINのエラーが出たら、DNSの問題なので、DNSサーバーを変更する
-# 制作
-## 流れ
-1. TwitterのAPIを利用する
-2. ツイート情報を取得する
-3. 取得したデータをSQLに格納する
-4. 画像を保存する
-5. 画像の保存前にSQL内のデータと被りがないか確認する
-6. 完成！
 
-## データベースの中身
+
+# データベースの中身
 |id|author_screenname| author_name | author_ID | tweet_ID | media_url | position | file_name |save_time|
 |-|-|-|-|-|-|-|-|-|
 |primary key||||||||
