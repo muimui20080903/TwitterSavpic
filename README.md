@@ -37,3 +37,5 @@ Bearer_Token="AAAAAAAAAAAAAAAAAA"
 |-|-|-|-|-|-|-|
 |primary key|||||||
 |id(自動で入力される)|ユーザー名|ユーザーid|ツイートID|画像のurl|何枚目か|ファイル名||
+
+sqlの操作は変数を使って行うのがいいらしい
