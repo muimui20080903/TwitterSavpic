@@ -27,7 +27,7 @@ Bearer_Token="AAAAAAAAAAAAAAAAAA"
 sqlite3でdbの作成
 ```
 $ sqlite3 twitterpic.db
-sqlite> CREATE TABLE twitterpic(id PRIMARY KEY ,author_screenname, author_name , author_ID , tweet_ID , media_url, position , file_name);
+sqlite> CREATE TABLE twitterpic(id INTEGER PRIMARY KEY ,author_screenname, author_name , author_ID , tweet_ID , media_url, position , file_name, save_time);
 ```
 開始
 ```
@@ -45,8 +45,9 @@ EAI_AGAINのエラーが出たら、DNSの問題なので、DNSサーバーを�
 6. 完成！
 
 ## データベースの中身
-|id|author_screenname| author_name | author_ID | tweet_ID | media_url | position | file_name |
-|-|-|-|-|-|-|-|-|
-|id(primary key)|ユーザーの表示名|ユーザー名(@)|ユーザーid|ツイートID|画像のurl|何枚目か|ファイル名||
+|id|author_screenname| author_name | author_ID | tweet_ID | media_url | position | file_name |save_time|
+|-|-|-|-|-|-|-|-|-|
+|primary key||||||||
+|id(自動で入力される)|ユーザーの表示名|ユーザー名(@)|ユーザーid|ツイートID|画像のurl|何枚目か|ファイル名|時間(2023/3/24 21:40:40)|
 
 sqlの操作は変数を使って行うのがいいらしい
