@@ -10,7 +10,7 @@ let sql ; // DBの操作は変数使うのがいいらしい、理由は英語�
 //画像の保存
 const fs = require("fs");
 //const axios = require("axios");
-const req = require("request");
+//const req = require("request");
 
 //ユーザーの指定
 const userName = json[0]["screen_name"];
@@ -59,6 +59,7 @@ const params = {
             });
             */
             //画像を保存
+            /*
             req(
               { method: "GET", url: media.url, encoding: null },
               function (error, response, body) {
@@ -66,12 +67,12 @@ const params = {
                   fs.writeFileSync(env.FILE_PATH_ROOT / tweet.id + "-" + index, body, "binary");
                 }
               }
-            );
+            );*/
             
           }
         }
       }
-      //console.log(results);
+      console.log(results);
 
     })
     .catch((error) => {
