@@ -16,9 +16,11 @@ $ npm install
     "target": [
         {
             "screen_name": "<ユーザー名>",
+            "FILE_PATH_ROOT": "<別のところに保存したかったら>"
         },
         {
             "screen_name": "@realDonaldTrump",
+            "FILE_PATH_ROOT": ""
         }
     ]
 }

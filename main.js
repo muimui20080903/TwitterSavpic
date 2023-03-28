@@ -83,8 +83,12 @@ json.target.forEach((target, num)=> {
 
                     //画像を保存
                     const main = async () => {
+                      let FILE_PATH_ROOT = json.FILE_PATH_ROOT;
+                      if (target.FILE_PATH_ROOT != null){
+                        FILE_PATH_ROOT = target.FILE_PATH_ROOT;
+                      };
                       const res = await axios.get(result.url, { responseType: "arraybuffer" });
-                      fs.writeFileSync(json.FILE_PATH_ROOT + fileName + ".png", new Buffer.from(res.data), "binary");
+                      fs.writeFileSync(FILE_PATH_ROOT + fileName + ".jpg", new Buffer.from(res.data), "binary");
                       //console.log("保存完了");
                     };
                     main();
@@ -94,7 +98,7 @@ json.target.forEach((target, num)=> {
             }
           }
         }
-        console.log(num+1+"人目保存完了〜！");
+        console.log(num+1+"人目(@"+target.screen_name+")保存完了〜！");
         //console.log(results);
       })
       .catch((error) => {
@@ -102,3 +106,4 @@ json.target.forEach((target, num)=> {
       });
   })()
 });
+console.log(json.FILE_PATH_ROOT);
