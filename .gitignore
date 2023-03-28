@@ -4,3 +4,4 @@
 target.json
 node_modules
 *.db
+test.js
