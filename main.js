@@ -85,7 +85,6 @@ json.target.forEach((target, num) => {
                     const main = async () => {
                       let FILE_PATH_ROOT = json.FILE_PATH_ROOT;
                       if (target.FILE_PATH_ROOT == "" || target.FILE_PATH_ROOT == null) {
-                        FILE_PATH_ROOT = json.FILE_PATH_ROOT;
                       }else{
                         FILE_PATH_ROOT = target.FILE_PATH_ROOT;
                     };
@@ -108,4 +107,5 @@ json.target.forEach((target, num) => {
       });
   })()
 });
-console.log(json.FILE_PATH_ROOT);
+//console.log(json.FILE_PATH_ROOT);//場所
+console.log(date.toLocaleString());
